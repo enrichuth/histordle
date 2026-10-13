@@ -234,73 +234,82 @@ body {
 .hidden { display: none !important; }
 
 /* ── MOBILE RESPONSIVE ── */
-@media (max-width: 700px) {
-  body { padding: 10px 0; }
+/* Hide monkey on anything under 900px wide — it's desktop only */
+@media (max-width: 900px) {
+  .monkey-wrap { display: none !important; }
+  .scroll-wrap { margin-left: 0 !important; }
+}
+
+@media (max-width: 600px) {
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+  }
 
   .game-outer {
-    padding: 0 10px;
+    padding: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box;
   }
 
-  /* Hide monkey on mobile — too big, covers content */
-  .monkey-wrap {
-    display: none;
-  }
-
-  /* Scroll takes full width */
   .scroll-wrap {
-    max-width: 100%;
-    margin-left: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .scroll-top, .scroll-bottom {
+    border-radius: 0 !important;
+    height: 24px !important;
   }
 
   .scroll-inner {
-    padding: 18px 16px 24px;
+    padding: 16px 14px 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .logo {
-    font-size: 28px !important;
-  }
-
-  .week-label, .event-date {
-    font-size: 13px;
+    font-size: 26px !important;
+    letter-spacing: 1px !important;
   }
 
   .hint-text {
-    font-size: 16px !important;
-  }
-
-  .hint-label {
     font-size: 15px !important;
   }
 
+  .hint-label {
+    font-size: 14px !important;
+  }
+
   .guess-input {
-    font-size: 16px !important;
-    padding: 10px 10px !important;
+    font-size: 15px !important;
+    padding: 9px 8px !important;
+    min-width: 0 !important;
   }
 
   .guess-btn {
-    font-size: 16px !important;
-    padding: 10px 14px !important;
+    font-size: 15px !important;
+    padding: 9px 12px !important;
+    white-space: nowrap;
+  }
+
+  .guess-row {
+    gap: 6px !important;
   }
 
   .tab-btn {
-    font-size: 13px;
-    padding: 6px 10px;
+    font-size: 12px !important;
+    padding: 5px 8px !important;
   }
 
-  .conclusion-body {
-    font-size: 14px;
-  }
-
-  /* Past events tab — pull it in from the right edge */
   .past-tab {
-    right: 4px;
-    font-size: 12px;
-    padding: 6px 8px;
-  }
-
-  /* Scroll curls stay but scaled */
-  .scroll-top, .scroll-bottom {
-    height: 28px;
+    right: 4px !important;
+    font-size: 11px !important;
+    padding: 5px 7px !important;
   }
 }
 
