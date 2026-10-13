@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#F2E8D0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Histordle">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Histordle by Enrichuth</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Kalam:wght@400&display=swap" rel="stylesheet">
 <style>
@@ -226,6 +232,78 @@ body {
 .past-event-title { font-family: var(--fh); font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
 .past-event-meta { font-family: var(--fh); font-size: 14px; color: var(--ink-faint); margin-bottom: 1rem; }
 .hidden { display: none !important; }
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 700px) {
+  body { padding: 10px 0; }
+
+  .game-outer {
+    padding: 0 10px;
+  }
+
+  /* Hide monkey on mobile — too big, covers content */
+  .monkey-wrap {
+    display: none;
+  }
+
+  /* Scroll takes full width */
+  .scroll-wrap {
+    max-width: 100%;
+    margin-left: 0 !important;
+  }
+
+  .scroll-inner {
+    padding: 18px 16px 24px;
+  }
+
+  .logo {
+    font-size: 28px !important;
+  }
+
+  .week-label, .event-date {
+    font-size: 13px;
+  }
+
+  .hint-text {
+    font-size: 16px !important;
+  }
+
+  .hint-label {
+    font-size: 15px !important;
+  }
+
+  .guess-input {
+    font-size: 16px !important;
+    padding: 10px 10px !important;
+  }
+
+  .guess-btn {
+    font-size: 16px !important;
+    padding: 10px 14px !important;
+  }
+
+  .tab-btn {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .conclusion-body {
+    font-size: 14px;
+  }
+
+  /* Past events tab — pull it in from the right edge */
+  .past-tab {
+    right: 4px;
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  /* Scroll curls stay but scaled */
+  .scroll-top, .scroll-bottom {
+    height: 28px;
+  }
+}
+
 </style>
 </head>
 <body>
