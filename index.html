@@ -490,5 +490,28 @@ document.getElementById("guessInput").addEventListener("keydown",e=>{if(e.key===
 document.getElementById("pastBtn").addEventListener("click",()=>{showingPast=true;activeTab="summary";document.getElementById("gameArea").classList.add("hidden");renderPast();});
 setMascot("idle",null);renderHints();renderBoard();
 </script>
+
+<script>
+// Auto-scale the entire game to fit its container width
+function scaleGame() {
+  const outer = document.querySelector('.scroll-wrap') || document.querySelector('.game-outer');
+  if (!outer) return;
+  const containerWidth = document.documentElement.clientWidth;
+  const baseWidth = 520;
+  if (containerWidth < baseWidth) {
+    const scale = containerWidth / baseWidth;
+    document.body.style.transform = 'scale(' + scale + ')';
+    document.body.style.transformOrigin = 'top left';
+    document.body.style.width = (100 / scale) + '%';
+    document.documentElement.style.overflowX = 'hidden';
+  } else {
+    document.body.style.transform = '';
+    document.body.style.width = '';
+  }
+}
+window.addEventListener('load', scaleGame);
+window.addEventListener('resize', scaleGame);
+</script>
+
 </body>
 </html>
