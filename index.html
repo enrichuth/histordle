@@ -744,10 +744,8 @@ function buildEventsModal() {
   if (!list) return;
   list.innerHTML = EVENTS.map((e, i) =>
     '<div class="event-modal-item' + (i === currentIdx ? " current" : "") + '" data-midx="' + i + '">' +
-    '<div class="event-modal-item-week">' + (e.week === "Past" ? "Previous Week" : e.week) + " · " + e.date +
+    '<div class="event-modal-item-week">' + (e.week === "Past" ? "Previous Week" : e.week) +
     (i === currentIdx ? '<span class="event-modal-badge">Playing</span>' : "") + "</div>" +
-    '<div class="event-modal-item-title">' + e.title + "</div>" +
-    '<div class="event-modal-item-meta">' + e.period + " · " + e.year + "</div>" +
     "</div>"
   ).join("");
   list.querySelectorAll(".event-modal-item").forEach(item => {
